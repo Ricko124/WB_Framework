@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ricko124/WB_Framework/main/WB_UI/web/logo.png" width="250">
-</p>
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/Ricko124/WB_Framework/main/WB_UI/web/logo.png" width="300">
 </p>
 
