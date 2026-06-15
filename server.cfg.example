@@ -1,0 +1,22 @@
+# WB_Scripts / WB_Framework Beispiel-Konfiguration
+
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+
+sv_hostname "WB_Scripts Roleplay"
+sv_maxclients 48
+sets locale "de-DE"
+set onesync on
+
+# CFX Key eintragen
+sv_licenseKey "DEIN_CFX_KEY"
+
+# Datenbank anpassen
+set mysql_connection_string "mysql://USER:PASS@127.0.0.1/DATENBANK?charset=utf8mb4"
+
+# Basis
+ensure oxmysql
+ensure es_extended
+
+# Startet alle WB_* Ressourcen automatisch
+ensure WB_Framework

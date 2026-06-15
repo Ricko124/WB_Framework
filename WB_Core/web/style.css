@@ -1,0 +1,64 @@
+﻿:root {
+  color-scheme: dark;
+  --bg: #040814;
+  --surface: rgba(8, 14, 32, 0.88);
+  --surface-soft: rgba(12, 20, 42, 0.72);
+  --border: rgba(96, 165, 250, 0.17);
+  --text: #e6edf8;
+  --muted: #9fb7ee;
+  --accent: #60a5fa;
+  --accent-strong: #7c3aed;
+  --glow: rgba(96, 165, 250, 0.22);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;min-height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;background:#040814;color:var(--text);overflow:hidden}
+body{background:radial-gradient(circle at top left, rgba(96,165,250,0.18), transparent 22%), radial-gradient(circle at 80% 10%, rgba(124,58,237,0.14), transparent 18%), linear-gradient(180deg, #08101f 0%, #030611 100%)}
+.backdrop{position:fixed;inset:0;pointer-events:none;background:linear-gradient(135deg, rgba(96,165,250,0.08), transparent 40%),linear-gradient(210deg, rgba(124,58,237,0.06), transparent 40%)}
+.app-shell{position:relative;margin:auto;padding:28px;max-width:1180px;display:grid;gap:22px;min-height:100vh}
+.header-bar{padding:26px 32px;background:var(--surface);border:1px solid var(--border);border-radius:32px;backdrop-filter:blur(22px);box-shadow:0 36px 110px rgba(0,0,0,0.26)}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand-card{display:flex;align-items:center;gap:18px}
+.brand-logo{width:84px;height:84px;display:block;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);padding:10px;box-shadow:0 22px 70px rgba(24,32,63,0.42)}
+.brand-copy{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-size:.85rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#93c5fd}
+.header-bar h1{margin:0;font-size:2.2rem;line-height:1.05;color:#fff}
+.header-note{margin:14px 0 0;color:var(--muted);max-width:760px;line-height:1.8}
+.label-pill{padding:.88rem 1.3rem;border-radius:999px;background:linear-gradient(135deg, rgba(96,165,250,0.18), rgba(124,58,237,0.22));color:#eff6ff;font-size:.86rem;font-weight:700;letter-spacing:.08em;box-shadow:0 16px 44px rgba(96,165,250,0.18)}
+.hero-panel{display:grid;grid-template-columns:1.75fr 1fr;gap:24px;padding:34px;background:rgba(8,14,30,0.9);border:1px solid rgba(255,255,255,0.06);border-radius:34px;box-shadow:0 38px 130px rgba(0,0,0,0.28)}
+.hero-content{display:flex;flex-direction:column;gap:18px}
+.hero-panel h2{margin:0;font-size:2.55rem;line-height:1.02;color:#fff;text-shadow:0 2px 14px rgba(96,165,250,0.14)}
+.hero-content p{margin:0;color:var(--muted);max-width:720px;font-size:1rem;line-height:1.85}
+.hero-meta{display:grid;grid-template-columns:repeat(3,minmax(200px,1fr));gap:16px;margin-top:12px}
+.hero-meta div{padding:22px;border-radius:24px;background:rgba(255,255,255,0.03);border:1px solid rgba(148,163,184,0.08);backdrop-filter:blur(14px)}
+.hero-meta strong{display:block;font-size:1.45rem;color:#fff;margin-bottom:6px}
+.hero-meta span{display:block;color:#93c5fd;font-size:.92rem}
+.hero-aside{display:grid;place-items:center}
+.glow-card{width:100%;padding:26px;border-radius:30px;background:linear-gradient(180deg, rgba(11,16,34,0.96), rgba(8,13,28,0.98));border:1px solid rgba(96,165,250,0.16);box-shadow:0 24px 72px rgba(96,165,250,0.18)}
+.glow-card h3{margin:0 0 12px;font-size:1.18rem;color:#fff}
+.glow-card p{margin:0;color:var(--muted);line-height:1.75}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(240px,1fr));gap:18px}
+.feature-card{padding:26px;border-radius:28px;background:rgba(15,23,46,0.86);border:1px solid rgba(255,255,255,0.06);box-shadow:0 24px 80px rgba(0,0,0,0.24)}
+.feature-card h3{margin:0 0 10px;font-size:1.05rem;color:#f8fafc}
+.feature-card p{margin:0;color:var(--muted);line-height:1.75}
+.footer-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 28px;border-radius:28px;background:rgba(15,23,46,0.75);border:1px solid rgba(96,165,250,0.12);box-shadow:0 24px 80px rgba(0,0,0,0.24)}
+.footer-bar span{color:#c7d2fe;font-size:.95rem}
+.btn-primary{border:none;padding:15px 30px;border-radius:999px;background:linear-gradient(135deg,#60a5fa,#7c3aed);color:#fff;font-size:1rem;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease;box-shadow:0 18px 60px rgba(96,165,250,0.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 70px rgba(96,165,250,0.33)}
+.btn-primary.active{background:linear-gradient(135deg,#22d3ee,#8b5cf6)}
+@media(max-width:980px){.hero-panel{grid-template-columns:1fr;}.hero-meta{grid-template-columns:1fr;}}
+@media(max-width:700px){.app-shell{padding:20px}.header-bar,.hero-panel,.feature-card,.footer-bar{padding:22px}.brand-row{flex-direction:column;align-items:flex-start}.header-note{max-width:100%}}'@; $js = @'
+window.addEventListener("message", (event) => {
+  const payload = event.data || {};
+  const badge = document.querySelector(".label-pill");
+  if (payload.module) {
+    badge.textContent = payload.module;
+  }
+  console.log("Wolfbecker UI event:", payload);
+});
+const button = document.getElementById("actionButton");
+if (button) {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+    button.textContent = button.classList.contains("active") ? "Bereit" : "UI testen";
+  });
+}

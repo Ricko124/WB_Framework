@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Customization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="customization-container">
+    <div class="header">
+      <img src="logo.png" alt="Wolfbecker" class="logo">
+      <h1>Character Anpassung</h1>
+    </div>
+
+    <div class="customization-content">
+      <!-- Left: Customization Options -->
+      <div class="customization-panel">
+        <div class="option-group">
+          <label>Frisur:</label>
+          <div class="slider-group">
+            <input type="range" id="hairStyle" min="0" max="100" value="0" onchange="updatePreview()">
+            <span id="hairLabel">Standard</span>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <label>Hautfarbe:</label>
+          <div class="color-picker">
+            <input type="color" id="skinColor" value="#D4A574" onchange="updatePreview()">
+          </div>
+        </div>
+
+        <div class="option-group">
+          <label>Kleidung:</label>
+          <div class="clothing-grid" id="clothingGrid">
+            <!-- Kleidung wird hier eingefügt -->
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button onclick="saveCustomization()" class="btn-primary">Speichern</button>
+          <button onclick="cancelCustomization()" class="btn-secondary">Abbrechen</button>
+        </div>
+      </div>
+
+      <!-- Right: Preview -->
+      <div class="preview-panel">
+        <div class="character-preview" id="characterPreview">
+          👤
+        </div>
+        <p>Vorschau</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

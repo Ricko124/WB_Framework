@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shop-container">
+    <div class="shop-header">
+      <img src="logo.png" alt="Shop" class="logo">
+      <h1 id="shopName">Shop</h1>
+      <div class="wallet">
+        <label>Bargeld:</label>
+        <span id="cash">$0</span>
+      </div>
+    </div>
+
+    <div class="shop-content">
+      <div class="shop-grid" id="shopGrid">
+        <!-- Items werden hier eingefügt -->
+      </div>
+    </div>
+
+    <button class="close-btn" onclick="closeShop()">Schließen</button>
+  </div>
+
+  <!-- Item Purchase Confirm -->
+  <div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Kaufbestätigung</h2>
+      <p id="confirmText"></p>
+      <div class="modal-actions">
+        <button onclick="confirmPurchase()" class="btn-primary">Kaufen</button>
+        <button onclick="cancelPurchase()" class="btn-secondary">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

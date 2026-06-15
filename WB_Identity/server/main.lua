@@ -1,0 +1,15 @@
+local ESX = exports['es_extended']:getSharedObject()
+local function license(src) for _,id in ipairs(GetPlayerIdentifiers(src)) do if id:sub(1,8)=='license:' then return id end end return ('source:%s'):format(src) end
+ESX.RegisterServerCallback('WB_Identity:getIdentity', function(src, cb, charId)
+  local lic=license(src); local row=MySQL.single.await('SELECT * FROM wb_characters WHERE id=? AND license=?',{tonumber(charId) or 0,lic}); cb(row)
+end)
+RegisterNetEvent('WB_Identity:saveIdentity', function(data)
+  local src=source; local lic=license(src); data=data or {}; local id=tonumber(data.id)
+  if not id then return end
+  MySQL.update.await('UPDATE wb_characters SET firstname=?, lastname=?, dateofbirth=?, sex=?, height=? WHERE id=? AND license=?', {data.firstname,data.lastname,data.dateofbirth,data.sex,tonumber(data.height) or 180,id,lic})
+  TriggerClientEvent('esx:showNotification',src,'Identität gespeichert')
+end)
+RegisterNetEvent('WB_Identity:saveSkin', function(charId, skin)
+  local src=source; local lic=license(src)
+  MySQL.update.await('UPDATE wb_characters SET skin=? WHERE id=? AND license=?',{json.encode(skin or {}),tonumber(charId) or 0,lic})
+end)

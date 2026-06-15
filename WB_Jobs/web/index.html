@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="jobs-container">
+    <div class="header">
+      <img src="logo.png" alt="Wolfbecker" class="logo">
+      <h1>Job Center</h1>
+      <p>Finde deinen perfekten Job</p>
+    </div>
+
+    <!-- Current Job Info -->
+    <div class="current-job" id="currentJob" style="display: none;">
+      <div class="job-badge">
+        <span id="jobTitle">Arbeitslos</span>
+        <span id="jobGrade" class="grade">-</span>
+      </div>
+      <div class="job-stats">
+        <div class="stat">
+          <label>Gehalt:</label>
+          <span id="salary">$0</span>
+        </div>
+        <div class="stat">
+          <label>Gesellschaftskasse:</label>
+          <span id="society">$0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Available Jobs -->
+    <div class="jobs-grid" id="jobsGrid">
+      <!-- Jobs werden hier eingefügt -->
+    </div>
+
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closeJobs()">Schließen</button>
+  </div>
+
+  <!-- Job Details Modal -->
+  <div id="jobModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeJobModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <div class="job-grades-list" id="gradesList"></div>
+      <div class="modal-actions">
+        <button id="joinJobBtn" onclick="joinJob()">Beitreten</button>
+        <button onclick="closeJobModal()" class="btn-secondary">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hospital-container">
+    <div class="hospital-header">
+      <img src="logo.png" alt="Hospital" class="logo">
+      <h1>Medical Center</h1>
+      <p>Rettungsdienste verfügbar</p>
+    </div>
+
+    <div class="status-screen" id="statusScreen">
+      <div class="status-card">
+        <h2>Zu Diensten!</h2>
+        <p>Ein Arzt ist schnell bei dir.</p>
+        <div class="loading">
+          <div class="spinner"></div>
+        </div>
+        <p id="statusText">Suche nach verfügbaren Ärzten...</p>
+      </div>
+    </div>
+
+    <div class="respawn-screen hidden" id="respawnScreen">
+      <div class="respawn-card">
+        <h2>Respawn-Optionen</h2>
+        <p>Wähle deinen Wiedereinstiegspunkt</p>
+        
+        <div class="respawn-options" id="respawnOptions">
+          <!-- Respawn-Punkte werden hier eingefügt -->
+        </div>
+
+        <button class="emergency-call-btn" onclick="callEmergency()">Rettungsdienste rufen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

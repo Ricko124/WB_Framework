@@ -1,0 +1,1 @@
+-- Discord resource has no client UI logic.

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank ATM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="atm-container">
+    <div class="atm-screen">
+      <div class="atm-header">
+        <img src="logo.png" alt="Wolfbecker Bank" class="bank-logo">
+        <h1>WOLFBECKER BANK</h1>
+        <p>Sichere Geldverwaltung</p>
+      </div>
+
+      <div class="atm-content" id="atmContent">
+        <div id="mainMenu" class="menu-screen">
+          <div class="account-summary">
+            <div class="summary-item">
+              <label>Kontostand:</label>
+              <span id="balance">$0</span>
+            </div>
+            <div class="summary-item">
+              <label>Name:</label>
+              <span id="accountHolder">-</span>
+            </div>
+          </div>
+
+          <div class="menu-options">
+            <button onclick="showWithdraw()" class="menu-btn">💰 Abhebung</button>
+            <button onclick="showDeposit()" class="menu-btn">📥 Einzahlung</button>
+            <button onclick="showTransfer()" class="menu-btn">💸 Überweisung</button>
+            <button onclick="showHistory()" class="menu-btn">📋 Transaktionen</button>
+            <button onclick="closeATM()" class="menu-btn close-btn">Beenden</button>
+          </div>
+        </div>
+
+        <!-- Withdraw Screen -->
+        <div id="withdrawScreen" class="menu-screen hidden">
+          <h2>Abhebung</h2>
+          <div class="input-group">
+            <label>Betrag ($):</label>
+            <input type="number" id="withdrawAmount" placeholder="0" min="0">
+          </div>
+          <div class="button-group">
+            <button onclick="processWithdraw()" class="btn-primary">Abheben</button>
+            <button onclick="backToMenu()" class="btn-secondary">Zurück</button>
+          </div>
+        </div>
+
+        <!-- Deposit Screen -->
+        <div id="depositScreen" class="menu-screen hidden">
+          <h2>Einzahlung</h2>
+          <div class="input-group">
+            <label>Betrag ($):</label>
+            <input type="number" id="depositAmount" placeholder="0" min="0">
+          </div>
+          <div class="button-group">
+            <button onclick="processDeposit()" class="btn-primary">Einzahlen</button>
+            <button onclick="backToMenu()" class="btn-secondary">Zurück</button>
+          </div>
+        </div>
+
+        <!-- Transfer Screen -->
+        <div id="transferScreen" class="menu-screen hidden">
+          <h2>Überweisung</h2>
+          <div class="input-group">
+            <label>Zielkonto:</label>
+            <input type="number" id="targetAccount" placeholder="Kontonummer">
+          </div>
+          <div class="input-group">
+            <label>Betrag ($):</label>
+            <input type="number" id="transferAmount" placeholder="0" min="0">
+          </div>
+          <div class="button-group">
+            <button onclick="processTransfer()" class="btn-primary">Überweisen</button>
+            <button onclick="backToMenu()" class="btn-secondary">Zurück</button>
+          </div>
+        </div>
+
+        <!-- History Screen -->
+        <div id="historyScreen" class="menu-screen hidden">
+          <h2>Transaktionen</h2>
+          <div class="transactions-list" id="transactionsList">
+            <!-- Transaktionen werden hier eingefügt -->
+          </div>
+          <button onclick="backToMenu()" class="btn-secondary" style="width: 100%; margin-top: 20px;">Zurück</button>
+        </div>
+
+        <!-- Message Screen -->
+        <div id="messageScreen" class="menu-screen hidden">
+          <div class="message-box">
+            <p id="messageText"></p>
+            <button onclick="backToMenu()" class="btn-primary" style="width: 100%;">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

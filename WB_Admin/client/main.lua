@@ -1,0 +1,11 @@
+local function openAdmin() ESX.TriggerServerCallback('WB_Admin:getPlayers', function(players) SetNuiFocus(true,true); SendNUIMessage({action='open',players=players}) end) end
+RegisterCommand('admin', openAdmin)
+RegisterNUICallback('kick', function(d,cb) TriggerServerEvent('WB_Admin:kick',d.id,d.reason); cb({ok=true}) end)
+RegisterNUICallback('ban', function(d,cb) TriggerServerEvent('WB_Admin:ban',d.id,d.reason); cb({ok=true}) end)
+RegisterNUICallback('revive', function(d,cb) TriggerServerEvent('WB_Admin:revive',d.id); cb({ok=true}) end)
+RegisterNUICallback('goto', function(d,cb) TriggerServerEvent('WB_Admin:goto',d.id); cb({ok=true}) end)
+RegisterNUICallback('bring', function(d,cb) TriggerServerEvent('WB_Admin:bring',d.id); cb({ok=true}) end)
+RegisterNUICallback('close', function(_,cb) SetNuiFocus(false,false); SendNUIMessage({action='close'}); cb({ok=true}) end)
+RegisterNetEvent('WB_Admin:revivePlayer', function() NetworkResurrectLocalPlayer(GetEntityCoords(PlayerPedId()),GetEntityHeading(PlayerPedId()),true,false); ClearPedBloodDamage(PlayerPedId()); TriggerEvent('esx_ambulancejob:revive') end)
+RegisterNetEvent('WB_Admin:gotoPlayer', function(target) local ped=GetPlayerPed(GetPlayerFromServerId(target)); if ped~=0 then SetEntityCoords(PlayerPedId(),GetEntityCoords(ped)) end end)
+RegisterNetEvent('WB_Admin:bringPlayer', function(admin) local ped=GetPlayerPed(GetPlayerFromServerId(admin)); if ped~=0 then SetEntityCoords(PlayerPedId(),GetEntityCoords(ped)) end end)

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wolfbecker Phone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="phone-container">
+    <div class="phone-screen">
+      <div class="phone-header">
+        <span>09:41</span>
+        <img src="logo.png" alt="Wolfbecker" class="phone-logo">
+        <span>●●●●●</span>
+      </div>
+
+      <div class="phone-tabs">
+        <button class="tab-btn active" onclick="showTab('messages')">💬 Messages</button>
+        <button class="tab-btn" onclick="showTab('contacts')">👥 Contacts</button>
+        <button class="tab-btn" onclick="showTab('calls')">📞 Calls</button>
+      </div>
+
+      <!-- Messages Tab -->
+      <div id="messagesTab" class="tab-content">
+        <div class="messages-list" id="messagesList">
+          <!-- Nachrichten werden hier eingefügt -->
+        </div>
+        <div class="message-input">
+          <input type="text" id="phoneNumber" placeholder="Nummer eingeben">
+          <input type="text" id="messageText" placeholder="Nachricht...">
+          <button onclick="sendMessage()">Senden</button>
+        </div>
+      </div>
+
+      <!-- Contacts Tab -->
+      <div id="contactsTab" class="tab-content hidden">
+        <div class="contacts-list" id="contactsList">
+          <!-- Kontakte werden hier eingefügt -->
+        </div>
+      </div>
+
+      <!-- Calls Tab -->
+      <div id="callsTab" class="tab-content hidden">
+        <div class="calls-list" id="callsList">
+          <!-- Anrufe werden hier eingefügt -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
